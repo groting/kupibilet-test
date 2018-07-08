@@ -36,7 +36,7 @@ RSpec.describe LinksController, type: :controller do
       expect(response.body).to eq({url: "#{request.host}/#{link.short_url}"}.to_json)
     end
 
-    it 'Gets 422 if long_url empty' do
+    it 'Gets 422 if longUrl empty' do
       post :create, params: {longUrl: ""}
       expect(response.status).to eq(422)
     end
